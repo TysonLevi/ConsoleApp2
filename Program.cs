@@ -5,15 +5,14 @@
         static void Main(string[] args)
         {
             List<string> list = new List<string>();
-            list.Add("Deak Csaba");
+            list.Add("Crackes Karoly");
             list.Add("Kiss István József");
-            list.Add("Nagy István Elemér");
+            list.Add("nagy István Elemér");
             list.Add("Farkas1 Aladár");
             list.Add("Pető@Ilona.hu");
             list.Add("Pisti");
             list.Add("12Elemér");
-            list.Add("SzekeresKata");
-
+            list.Add("SzekereKata");
             while (true)
             {
                 Console.Clear();
@@ -26,16 +25,31 @@
                 string valasztas = Console.ReadLine();
                 switch (valasztas)
                 {
-                    case "0":return; // Kilépés
+                    case "0":
+                        return; // Kilépés
                     case "1":
-                        //Minden név listázása
                         Console.Clear();
                         int sorszam = 0;
-                        foreach (string nev in list)
-                            Console.WriteLine($"{sorszam++}.{nev}");
+                        foreach (var nev in list)
+                        {
+                            Console.WriteLine($"{sorszam++}. {nev}");
+                        }
                         break;
                     case "2":
-                        Console.WriteLine("2");
+                        //Csak betűk
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (var nev in list)
+                        {
+                            bool jo = true;
+                            foreach (char betu in nev)
+                            {
+                                if (!Char.IsLetter(betu) && betu != ' ')
+                                    jo = false;
+                            }
+                            if (jo)
+                                Console.WriteLine($"{sorszam++}. {nev}");
+                        }
                         break;
                     case "3":
                         Console.WriteLine("3");
@@ -55,3 +69,4 @@
         }
     }
 }
+
