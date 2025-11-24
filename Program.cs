@@ -52,14 +52,7 @@
                         }
                         break;
                     case "3":
-                        //Nagybetűs nevek
-                        Console.Clear();
-                        sorszam = 0;
-                        foreach (var nev in list)
-                        {
-                            if (Char.IsUpper(nev[0]))
-                                Console.WriteLine($"{sorszam++}. {nev}");
-                        }
+                       
                         break;
                     case "4":
                         // Rövid nevek
