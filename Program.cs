@@ -4,6 +4,16 @@
     {
         static void Main(string[] args)
         {
+            List<string> list = new List<string>();
+            list.Add("Deak Csaba");
+            list.Add("Kiss István József");
+            list.Add("Nagy István Elemér");
+            list.Add("Farkas1 Aladár");
+            list.Add("Pető@Ilona.hu");
+            list.Add("Pisti");
+            list.Add("12Elemér");
+            list.Add("SzekeresKata");
+
             while (true)
             {
                 Console.Clear();
