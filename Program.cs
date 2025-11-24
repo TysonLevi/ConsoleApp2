@@ -52,13 +52,47 @@
                         }
                         break;
                     case "3":
-                        Console.WriteLine("3");
+                        //Nagybetűs nevek
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (var nev in list)
+                        {
+                            if (Char.IsUpper(nev[0]))
+                                Console.WriteLine($"{sorszam++}. {nev}");
+                        }
                         break;
                     case "4":
-                        Console.WriteLine("4");
+                        // Rövid nevek
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (var nev in list)
+                        {
+                            if (nev.Length <= 5)
+                                Console.WriteLine($"{sorszam++}. {nev}");
+                        }
                         break;
                     case "5":
-                        Console.WriteLine("5");
+                        //Nagybetűs nevek ahol a többi kicsi és nem tartalmaz számot és speciális jelet
+                        Console.Clear();
+                        sorszam = 0;
+                        foreach (var nev in list)
+                        {
+                            bool jo = true;
+                            foreach (char betu in nev)
+                            {
+                                if (!Char.IsLetter(betu) && betu != ' ')
+                                    jo = false;
+                            }
+                            String[] nevdarabok = nev.Split(" ");
+                            foreach (var nevdarab in nevdarabok)
+                            {
+                                if (!Char.IsUpper(nevdarab[0]))
+                                    jo = false;
+                                if (nevdarab.Substring(1) == nevdarab.Substring(1).ToLower() == false)
+                                    jo = false;
+                            }
+                            if (jo) Console.WriteLine($"{sorszam++}. {nev}");
+                        }
                         break;
                     default:
                         Console.WriteLine("Rossz parancs!.");
@@ -69,4 +103,3 @@
         }
     }
 }
-
